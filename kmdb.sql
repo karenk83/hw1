@@ -170,18 +170,22 @@ INSERT INTO studios (name) VALUES
 
 INSERT INTO movies (title, year_released, mpaa_rating, studio_id) VALUES
   ('Batman Begins', 2005, 'PG-13', 1),
-  ('The Dark Knight', 2008, 'PG-13', 1),'The Dark Knight', 2008, 'PG-13', 1),
-  ('The Dark Knight Rises', 2012, 'PG-13', 1),
+  ('The Dark Knight', 2008, 'PG-13', 1),
+  ('The Dark Knight Rises', 2012, 'PG-13', 1);
 
 
   INSERT INTO movie_cast (movie_id, actor_id, character_name) VALUES
   (1, 1, 'Batman'),
   (1, 2, 'Alfred Pennyworth'),
   (1, 3, 'Sgt. James Gordon'),
-  (1, 4, 'Henri Ducard / Ra's al Ghul')
+  (1, 4, 'Henri Ducard / Ras al Ghul')
   (1, 5, 'Rachel Dawes'),
   (1, 6, 'Dr. Jonathan Crane / The Scarecrow'),
   (1, 7, 'Carmine Falcone'),
   (1, 8, 'William Earle'),
-  (1, 9, 'Ra's al Ghul's decoy'),
+  (1, 9, 'Ras al Ghul's decoy'),
   (1, 10, 'Lucius Fox');
+
+SELECT movies.title, movies.year_released, movies.mpaa_rating, studios.name
+FROM movies
+INNER JOIN studios s ON movies.studio_id = studio.name;
